@@ -1,0 +1,9 @@
+*.swp
+.DS_Store
+.idea
+.tmp
+.vscode
+compiled
+node_modules
+npm-debug.log
+public
