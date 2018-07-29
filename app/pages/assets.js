@@ -1,9 +1,9 @@
 /* Based on the template in Web Starter Kit :
 https://github.com/google/web-starter-kit/blob/master/app/index.html
 */
-import chromeFavicon from '../images/chrome-ninja192-precomposed.png';
-import appleFavicon from '../images/apple-ninja152-precomposed.png';
-import msFavicon from '../images/ms-ninja144-precomposed.png';
+import chromeFavicon from '../images/icon-192x192.png';
+import appleFavicon from '../images/icon-152x152.png';
+import msFavicon from '../images/icon-144x144.png';
 import favicon from '../images/favicon.png';
 
 const metaAssets = () => {
@@ -11,7 +11,7 @@ const metaAssets = () => {
     { charset: 'utf-8' },
     // Meta descriptions are commonly used on search engine result pages to
     // display preview snippets for a given page.
-    { name: 'description', content: 'Your One-Stop solution for a full-stack universal Redux App' },
+    { name: 'description', content: 'Full stack chat app' },
     // Setting IE=edge tells Internet Explorer to use the latest engine to
     //  render the page and execute Javascript
     { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
@@ -30,7 +30,7 @@ const metaAssets = () => {
     // Add to homescreen for Safari on IOS
     { name: 'apple-mobile-web-app-capable', content: 'yes' },
     { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-    { name: 'apple-mobile-web-app-title', content: 'reactGo' },
+    { name: 'apple-mobile-web-app-title', content: 'react-go-chat' },
     // Tile icon for Win8 (144x144 + tile color)
     { name: 'msapplication-TileImage', content: msFavicon },
     { name: 'msapplication-TileColor', content: '#3372DF' }
@@ -52,6 +52,6 @@ const linkAssets = () => {
   return links;
 };
 
-export const title = 'reactGo - just ship it';
+export const title = 'react-go-chat';
 export const meta = metaAssets();
 export const link = linkAssets();
