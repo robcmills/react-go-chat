@@ -1,8 +1,8 @@
-import { DB_TYPES } from './dbTypes';
+const { DB_TYPES } = require('./dbTypes')
 
-export const ENV = process.env.NODE_ENV || 'development';
-
-export const DB_TYPE = process.env.DB_TYPE || DB_TYPES.SQLITE;
-
-export const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || null;
+module.exports = {
+	ENV: process.env.NODE_ENV || 'development',
+	DB_TYPE: process.env.DB_TYPE || DB_TYPES.SQLITE,
+	GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || null,
+}
 

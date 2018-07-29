@@ -1,7 +1,10 @@
 module.exports = {
   development: {
+    username: 'root',
+    password: null,
+    database: 'react-go-chat-dev',
     dialect: 'sqlite',
-    storage: 'data/dev-db.sqlite3'
+    storage: 'data/react-go-chat-dev.sqlite3'
   },
   test: {
     dialect: 'sqlite',
@@ -10,7 +13,7 @@ module.exports = {
   production: {
     username: process.env.RDS_USERNAME,
     password: process.env.RDS_PASSWORD,
-    database: 'ebdb',
+    database: 'react-go-chat-prod',
     port: process.env.RDS_PORT,
     host: process.env.RDS_HOSTNAME,
     dialect: 'mysql'
