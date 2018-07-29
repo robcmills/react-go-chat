@@ -1,3 +1,13 @@
+# react-go
+
+### Development Setup
+
+```bash
+nvm use 8.11.3
+npm install
+NODE_ENV=development node_modules/.bin/sequelize db:migrate
+```
+
 # reactGo
 
 [![Dependency Status][dep-status-img]][dep-status-link] [![devDependency Status][dev-dep-status-img]][dev-dep-status-link]
