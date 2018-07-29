@@ -1,7 +1,10 @@
-import { DB_TYPE } from '../../../config/env';
-import { DB_TYPES } from '../../../config/dbTypes';
+const { DB_TYPE } = require('../../../config/env')
+const { DB_TYPES } = require('../../../config/dbTypes')
 
 switch (DB_TYPE) {
+  case DB_TYPES.SQLITE:
+    module.exports = require('../sqlite/sequelize_config');
+    break;
   case DB_TYPES.POSTGRES:
     module.exports = require('../postgres/sequelize_config');
     break;

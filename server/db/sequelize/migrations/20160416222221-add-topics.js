@@ -14,7 +14,7 @@ module.exports = {
         },
         date: {
           type: DataTypes.DATE,
-          defaultValue: DataTypes.fn('NOW')
+          defaultValue: DataTypes.NOW
         }
       }
     );

@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) =>
     },
     date: {
       type: DataTypes.DATE,
-      defaultValue: sequelize.fn('NOW')
+      defaultValue: DataTypes.NOW
     }
   }, {
     timestamps: false
