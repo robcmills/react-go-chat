@@ -11,8 +11,8 @@ const app = express();
 
 /*
  * Database-specific setup
- * - connect to MongoDB using mongoose
- * - register mongoose Schema
+ * - connect to SQLite using sequelize
+ * - register sequelize models
  */
 connect();
 
