@@ -1,36 +1,35 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom'
-import classNames from 'classnames/bind'
-import { connect } from 'react-redux'
-import { manualLogin, signUp, toggleLoginMode } from '../../actions/users'
-import styles from './styles'
-import hourGlassSvg from '../../images/hourglass.svg'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import classNames from 'classnames/bind';
+import { connect } from 'react-redux';
+import {
+  manualLogin as manualLoginAction,
+  signUp as signUpAction,
+  toggleLoginMode as toggleLoginModeAction,
+} from '../../actions/users';
+import styles from './styles.css';
+import hourGlassSvg from '../../images/hourglass.svg';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 class LoginContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.handleOnSubmit = this.handleOnSubmit.bind(this)
-  }
+  handleOnSubmit = (event) => {
+    event.preventDefault();
 
-  handleOnSubmit(event) {
-    event.preventDefault()
-
-    const { manualLogin, signUp, user: { isLogin } } = this.props
-    const email = ReactDOM.findDOMNode(this.refs.email).value
-    const password = ReactDOM.findDOMNode(this.refs.password).value
+    const { manualLogin, signUp, user: { isLogin } } = this.props;
+    const email = ReactDOM.findDOMNode(this.refs.email).value;
+    const password = ReactDOM.findDOMNode(this.refs.password).value;
 
     if (isLogin) {
-      manualLogin({ email, password })
+      manualLogin({ email, password });
     } else {
-      signUp({ email, password })
+      signUp({ email, password });
     }
   }
 
   renderHeader() {
-    const { user: { isLogin }, toggleLoginMode } = this.props
+    const { user: { isLogin }, toggleLoginMode } = this.props;
     if (isLogin) {
       return (
         <div className={cx('header')}>
@@ -43,7 +42,7 @@ class LoginContainer extends Component {
             >Register an Account</a>
           </div>
         </div>
-      )
+      );
     }
 
     return (
@@ -57,11 +56,11 @@ class LoginContainer extends Component {
           >Login</a>
         </div>
       </div>
-    )
+    );
   }
 
   render() {
-    const { isWaiting, message, isLogin } = this.props.user
+    const { isWaiting, message, isLogin } = this.props.user;
 
     return (
       <div
@@ -83,7 +82,7 @@ class LoginContainer extends Component {
               <input
                 className={cx('input')}
                 type="password"
-               ref="password"
+                ref="password"
                 placeholder="password"
               />
               <div className={cx('hint')}>
@@ -108,7 +107,7 @@ class LoginContainer extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -117,21 +116,17 @@ LoginContainer.propTypes = {
   manualLogin: PropTypes.func.isRequired,
   signUp: PropTypes.func.isRequired,
   toggleLoginMode: PropTypes.func.isRequired
-}
+};
 
-// Function passed in to `connect` to subscribe to Redux store updates.
-// Any time it updates, mapStateToProps is called.
 function mapStateToProps({user}) {
   return {
     user
-  }
+  };
 }
 
-// Connects React component to the redux store
-// It does not modify the component class passed to it
-// Instead, it returns a new, connected component class, for you to use.
-export default connect(
-  mapStateToProps,
-  { manualLogin, signUp, toggleLoginMode }
-)(LoginContainer)
+export default connect(mapStateToProps, {
+  manualLogin: manualLoginAction,
+  signUp: signUpAction,
+  toggleLoginMode: toggleLoginModeAction,
+})(LoginContainer);
 

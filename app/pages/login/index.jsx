@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import Page from '../../pages/Page'
-import LoginContainer from './container'
+import React, { Component } from 'react';
+import Page from '../../pages/Page';
+import LoginContainer from './container';
 
 class LoginPage extends Component {
-  getMetaData() {
+  getMetaData = () => {
     return {
       title: 'Login',
       meta: [{ name: 'description', content: 'Login or register page' }],
       link: [],
-    }
+    };
   }
 
   render() {
@@ -16,8 +16,8 @@ class LoginPage extends Component {
       <Page {...this.getMetaData()}>
         <LoginContainer {...this.props} />
       </Page>
-    )
+    );
   }
 }
 
-export default LoginPage
+export default LoginPage;
