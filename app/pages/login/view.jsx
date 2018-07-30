@@ -12,7 +12,7 @@ const LoginHeader = ({ toggleLoginMode }) =>
   <div className={cx('header')}>
     <h1 className={cx('heading')}>Login with Email</h1>
     <div className={cx('alternative')}>
-      Not what you want?
+      or &nbsp;
       <a
         className={cx('alternative-link')}
         onClick={toggleLoginMode}
@@ -24,7 +24,7 @@ const RegisterHeader = ({ toggleLoginMode }) =>
   <div className={cx('header')}>
     <h1 className={cx('heading')}>Register with Email</h1>
     <div className={cx('alternative')}>
-      Already have an account?
+      Already have an account? &nbsp;
       <a
         className={cx('alternative-link')}
         onClick={toggleLoginMode}
@@ -57,12 +57,6 @@ const LoginView = ({
           isLogin={isLogin}
           message={message}
         />
-      </div>
-      <div className={cx('google-container')}>
-        <h1 className={cx('heading')}>Google Login Demo</h1>
-        <a
-          className={cx('button')}
-          href="/auth/google">Login with Google</a>
       </div>
     </div>
   </div>;
